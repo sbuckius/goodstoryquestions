@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What makes an interesting story? (RTDB)</title>
+  <style>
+    :root { --bg:#0b1020; --card:#131a33; --ink:#e6ecff; --muted:#9fb0ff; --accent:#8eb3ff; --accent-2:#66e3c4; }
+    html,body{height:100%;margin:0;background:#0b1020;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    #app{max-width:900px;margin:24px auto 80px;padding:0 16px}
+    .hero{display:grid;gap:6px;margin-bottom:20px}
+    .hero h1{font-size:clamp(24px,3.2vw,36px);margin:0}
+    .hero p{color:var(--muted);margin:0}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 24px}
+    button{border:none;border-radius:14px;padding:12px 16px;font-weight:600;background:linear-gradient(180deg,var(--accent) 0%,#6b92ff 100%);color:#0b1020;cursor:pointer}
+    button.secondary{background:linear-gradient(180deg,#2a335f 0%,#1c244a 100%);color:var(--ink)}
+    button:disabled{opacity:.6;cursor:not-allowed}
+    .status{font-size:14px;color:var(--muted);min-height:22px}
+    .section{background:linear-gradient(180deg,#141b36 0%,var(--card) 100%);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:14px;margin:14px 0;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+    .section h3{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--accent-2)}
+    .section p.q{margin:0 0 10px}
+    .section textarea{width:100%;min-height:90px;resize:vertical;border-radius:12px;padding:12px;background:#0f1530;color:var(--ink);border:1px solid #263267;outline:none;font-size:15px;line-height:1.4}
+    .footer-note{color:var(--muted);font-size:13px;margin-top:18px}
+    .idline{font-size:12px;color:#9cb0ff}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="hero">
+      <h1>What makes an interesting story?</h1>
+      <p>Type your answers below. Save to Firebase Realtime Database, Reset to clear, or Export to text.</p>
+    </div>
+    <div class="controls">
+      <button id="saveBtn">💾 Save Answers</button>
+      <button id="resetBtn" class="secondary">🧹 Reset All</button>
+      <button id="exportBtn" class="secondary">⬇️ Export TXT</button>
+     <span class="status" id="status"></span> 
+    </div>
+    <div class="idline" id="idline"></div>
+    <div id="sections"></div>
+  
+  </div>
+
+  <!-- Firebase (Compat) -->
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <!-- App logic -->
+  <script defer src="good_story_questions.js"></script>
+</body>
+</html>
