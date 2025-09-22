@@ -14,6 +14,7 @@ const QUESTIONS = [
   "What makes a poetic story?",
   "What makes an encouraging, uplifting story?",
   "What makes a thought-provoking story that encourages a new perspective?",
+  "What makes a funny story?",
   "What makes a charged, edgy story?"
 ];
 
